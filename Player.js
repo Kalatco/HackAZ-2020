@@ -6,7 +6,6 @@ class Player{
         this.height = parseInt(document.getElementById("player").height);
         this.verticalVelocity = 0;
         this.horizontalVelocity = 0;
-        this.canMove = false;
         this.direction = 0;//radians
     }
 

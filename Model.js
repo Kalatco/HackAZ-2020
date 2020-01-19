@@ -48,6 +48,20 @@ class Model{
         }
         this.player.x += this.player.horizontalVelocity;
         this.player.y += this.player.verticalVelocity;
+
+        let playerCenterX = this.player.x + this.player.width / 2;
+        let playerCenterY = this.player.y + this.player.height / 2;
+        for (let i = 0; i < this.planets.length; i++){
+            let planet = this.planets[i];
+            if (this.distance(planet.x, planet.y, playerCenterX, playerCenterY) < planet.radius){
+                let canvas = document.getElementById("primarystage");
+                this.player.x = 0;
+                this.player.y = (canvas.height / 2) - (parseInt(document.getElementById("player").height) / 2);
+                this.player.horizontalVelocity = 0;
+                this.player.verticalVelocity = 0;
+                this.player.direction = 0;
+            }
+        }
     }
 
     getTheta(player, normalizedOtherX, normalizedOtherY){
