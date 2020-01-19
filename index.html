@@ -1,15 +1,20 @@
 <!DOCTYPE html>
 <html>
 	<head>
-        <title>Gravity</title>
-        <link rel="stylesheet" type="text/css" href="GameStyle.css" />
-        <script type="text/javascript" src="Player.js"></script>
-        <script type="text/javascript" src="Planet.js"></script>
-        <script type="text/javascript" src="View.js"></script>
-        <script type="text/javascript" src="Model.js"></script>
+                <title>Gravity</title>
+                <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+                <link rel="stylesheet" type="text/css" href="GameStyle.css" />
+                <script type="text/javascript" src="Player.js"></script>
+                <script type="text/javascript" src="Planet.js"></script>
+                <script type="text/javascript" src="View.js"></script>
+                <script type="text/javascript" src="Model.js"></script>
+                <script> function myFunction() { location.reload(); } </script>
 	</head>
 	<body>
-        <canvas id="primarystage" width="1100" height="750"></canvas>
-        <img src="spacecraft.png" id="player" width="40" height="20">
-	</body>
+                <canvas id="primarystage" width="1100" height="700"></canvas> <!-- width = 1200 -->
+                <img src="spacecraft.png" id="player" width="40" height="20"> 
+                <div id="restartBtn">
+                        <button onclick="myFunction()">Restart</button>
+                </div>
+	</body>   
 </html>
