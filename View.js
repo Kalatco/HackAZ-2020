@@ -1,4 +1,4 @@
-let numPlanets = 2;
+let numPlanets = 10;
 (function(){
     let model;
 

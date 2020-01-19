@@ -33,6 +33,7 @@ class Model{
         for (let i = 0; i < this.planets.length; i++){
             let planet = this.planets[i];
             let a = planet.radius / (Math.pow(this.player.x - planet.x, 2) + Math.pow(this.player.y - planet.y, 2));
+            a = a / 10;
             let theta = this.getTheta(this.player, planet.x, document.getElementById("primarystage").height - planet.y);
 
             let va = -1 * a * Math.sin(theta);
@@ -40,7 +41,7 @@ class Model{
             this.player.horizontalVelocity += ha;
             this.player.verticalVelocity += va;
         }
-        let a = .005;
+        let a = .001;
         if (this.spacePressed){
             this.player.verticalVelocity += -1 * a * Math.sin(this.player.direction);
             this.player.horizontalVelocity += a * Math.cos(this.player.direction);
