@@ -4,7 +4,6 @@ let numPlanets = 2;
 
     let aPressed = false;
     let dPressed = false;
-    let spacePressed = false;
 
     function drawAll(){
         let canvas = document.getElementById("primarystage");
@@ -49,7 +48,7 @@ let numPlanets = 2;
             }
             if (e.keyCode == "32"){
                 console.log("Space Pressed");
-                spacePressed = true;
+                model.setSpacePressed(true);
             }
         }
         document.onkeyup = function(e){
@@ -63,7 +62,7 @@ let numPlanets = 2;
             }
             if (e.keyCode == "32"){
                 console.log("Space Released");
-                spacePressed = false;
+                model.setSpacePressed(false);
             }
         }
     }

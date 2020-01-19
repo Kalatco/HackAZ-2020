@@ -3,6 +3,7 @@ class Model{
         let canvas = document.getElementById("primarystage");
         this.player = new Player(0, (canvas.height / 2) - (parseInt(document.getElementById("player").height) / 2));
         this.planets = [];
+        this.spacePressed = false;
         let i = 0;
         while (i < numPlanets){
 
@@ -24,6 +25,10 @@ class Model{
         }
     }
 
+    setSpacePressed(status){
+        this.spacePressed = status;
+    }
+
     updatePlayer(){
         for (let i = 0; i < this.planets.length; i++){
             let planet = this.planets[i];
@@ -34,6 +39,11 @@ class Model{
             let ha = a * Math.cos(theta);
             this.player.horizontalVelocity += ha;
             this.player.verticalVelocity += va;
+        }
+        let a = .005;
+        if (this.spacePressed){
+            this.player.verticalVelocity += -1 * a * Math.sin(this.player.direction);
+            this.player.horizontalVelocity += a * Math.cos(this.player.direction);
         }
         this.player.x += this.player.horizontalVelocity;
         this.player.y += this.player.verticalVelocity;
