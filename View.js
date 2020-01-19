@@ -9,10 +9,15 @@ let numPlanets = 10;
         let canvas = document.getElementById("primarystage");
         let ctx = canvas.getContext("2d");
         let playerImg = document.getElementById("player");
+        let thrustImg = document.getElementById("thrust");
         ctx.clearRect(0,0,canvas.width,canvas.height);
         ctx.translate(model.player.x + model.player.width / 2, model.player.y + model.player.height / 2);
         ctx.rotate(-1 * model.player.direction);
-        ctx.drawImage(playerImg, -1 * playerImg.width / 2, -1 * playerImg.height / 2, playerImg.width, playerImg.height);
+        if (model.spacePressed){
+            ctx.drawImage(thrustImg, -1 * playerImg.width / 2, -1 * playerImg.height / 2, playerImg.width, playerImg.height)
+        }else{
+            ctx.drawImage(playerImg, -1 * playerImg.width / 2, -1 * playerImg.height / 2, playerImg.width, playerImg.height);
+        }
         ctx.rotate(model.player.direction);
         ctx.translate(-1 * (model.player.x + model.player.width / 2), -1 * (model.player.y + model.player.height / 2));
         for (let i = 0; i < model.planets.length; i++){
