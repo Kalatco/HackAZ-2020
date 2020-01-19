@@ -23,7 +23,11 @@ let numPlanets = 10;
         for (let i = 0; i < model.planets.length; i++){
             ctx.beginPath();
             ctx.arc(model.planets[i].x, model.planets[i].y, model.planets[i].radius, 0, 2 * Math.PI);
-            ctx.fillStyle = "green";
+            if (model.planets[i].goal){
+                ctx.fillStyle = "green";
+            }else{
+                ctx.fillStyle = "red";
+            }
             ctx.fill();
         }
     }

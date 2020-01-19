@@ -5,12 +5,15 @@ class Model{
         this.planets = [];
         this.spacePressed = false;
         let i = 0;
-        while (i < numPlanets){
-
-            let newPlanet = new Planet(Math.random() * (parseInt(canvas.width) - 200) + 200, Math.random() * parseInt(canvas.height), Math.random() * 100 + 20);
+        while (i < numPlanets + 1){
+            let newPlanet;
+            if (i == numPlanets){
+                newPlanet = new Planet(Math.random() * (parseInt(canvas.width) - 200) + 200, Math.random() * parseInt(canvas.height), Math.random() * 100 + 20, true);
+            }else{
+                newPlanet = new Planet(Math.random() * (parseInt(canvas.width) - 200) + 200, Math.random() * parseInt(canvas.height), Math.random() * 100 + 20, false);
+            }
             let j = 0;
             let overlap = false;
-            console.log(this.planets.length);
             while (j < this.planets.length && !overlap){
                 if (this.planets[j].radius + newPlanet.radius > this.distance(newPlanet.x,newPlanet.y,this.planets[j].x,this.planets[j].y)){
                     //planets collide so respawn
@@ -33,7 +36,6 @@ class Model{
         for (let i = 0; i < this.planets.length; i++){
             let planet = this.planets[i];
             let a = planet.radius / (Math.pow(this.player.x - planet.x, 2) + Math.pow(this.player.y - planet.y, 2));
-            a = a / 5;
             let theta = this.getTheta(this.player, planet.x, document.getElementById("primarystage").height - planet.y);
 
             let va = -1 * a * Math.sin(theta);
@@ -55,6 +57,10 @@ class Model{
             let planet = this.planets[i];
             if (this.distance(planet.x, planet.y, playerCenterX, playerCenterY) < planet.radius){
                 let canvas = document.getElementById("primarystage");
+                if (planet.goal){
+                    alert("You Won!");
+                    location.reload();
+                }
                 this.player.x = 0;
                 this.player.y = (canvas.height / 2) - (parseInt(document.getElementById("player").height) / 2);
                 this.player.horizontalVelocity = 0;
