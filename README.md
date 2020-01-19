@@ -7,7 +7,7 @@
 [Andrew Raftovich](https://github.com/Kalatco) 
 [Robbie Bagley](https://github.com/kansairob) 
 
-## Team
+## Team (except tall man in center)
 
 ![Pros](https://github.com/Kalatco/HackAZ-2020/blob/master/team1.jpg)
 ![T-posing](https://github.com/Kalatco/HackAZ-2020/blob/master/team2.jpg)
