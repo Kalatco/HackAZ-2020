@@ -13,7 +13,7 @@ app.use(express.static('public'));
 app.get('/', function (req, res) {
     var collection = [];// will contain the total collection of output data
     res.header("Access-Control-Allow-Origin", "*");
-    var input = fs.readFileSync('test.csv');
+    var input = fs.readFileSync('SteamGamesDataSet.csv');
     var data = input + '';
     var rows = data.split('\n').slice(1);
 
