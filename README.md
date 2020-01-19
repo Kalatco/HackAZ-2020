@@ -9,8 +9,8 @@
 
 ## Team
 
-[Pros](https://github.com/Kalatco/HackAZ-2020/blob/master/team1.jpg)
-[T-posing](https://github.com/Kalatco/HackAZ-2020/blob/master/team2.jpg)
+![Pros](https://github.com/Kalatco/HackAZ-2020/blob/master/team1.jpg)
+![T-posing](https://github.com/Kalatco/HackAZ-2020/blob/master/team2.jpg)
 
 ## Purpose
 
