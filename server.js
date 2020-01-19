@@ -10,12 +10,17 @@ const fs = require('fs')
 
 app.use(express.static('public'));
 
+
+
+
+
 app.get('/all', function (req, res) {
     res.header("Access-Control-Allow-Origin", "*");
     res.send(parseCSV());
 });
 
 app.get('/all/get1of5', function (req, res) {
+    res.header("Access-Control-Allow-Origin", "*");
     var collection = parseCSV();                // collection of games
 
     var rand = Math.floor(Math.random() + 5); // random number 1-5
@@ -30,7 +35,7 @@ app.get('/all/get1of5', function (req, res) {
             if (!(randGame in randList)) {
                 randList.push(randGame);
             }
-        } while (randList.length < 40);
+        } while (randList.length < 30);
 
     } else if (rand == 2) {
         //medium planets
@@ -39,14 +44,14 @@ app.get('/all/get1of5', function (req, res) {
             if (!(randGame in randList)) {
                 randList.push(randGame);
             }
-        } while (randList.length < 10);
+        } while (randList.length < 8);
         //small planets
         do {
             randGame = Math.floor(Math.random() * (+300 - 150) + 150); // random number 150-300
             if (!(randGame in randList)) {
                 randList.push(randGame);
             }
-        } while (randList.length < 10+15);
+        } while (randList.length < 8+15);
 
     } else if (rand == 3) {
         //large planets
@@ -57,14 +62,14 @@ app.get('/all/get1of5', function (req, res) {
             if (!(randGame in randList)) {
                 randList.push(randGame);
             }
-        } while (randList.length < 5+1);
+        } while (randList.length < 4+1);
         //small planets
         do {
             randGame = Math.floor(Math.random() * (+300 - 150) + 150); // random number 150-300
             if (!(randGame in randList)) {
                 randList.push(randGame);
             }
-        } while (randList.length < 10+5+1);
+        } while (randList.length < 8+4+1);
 
     } else if (rand == 4) {
         //large planets
@@ -75,7 +80,7 @@ app.get('/all/get1of5', function (req, res) {
             if (!(randGame in randList)) {
                 randList.push(randGame);
             }
-        } while (randList.length < 10+1);
+        } while (randList.length < 8+1);
 
     } else {
         //large planets
@@ -90,7 +95,7 @@ app.get('/all/get1of5', function (req, res) {
             if (!(randGame in randList)) {
                 randList.push(randGame);
             }
-        } while (randList.length < 15+3);
+        } while (randList.length < 10+3);
 
     }
 

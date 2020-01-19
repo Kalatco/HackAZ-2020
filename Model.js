@@ -1,28 +1,63 @@
+const sleep = (s) => new Promise((resolve, reject)=> setTimeout(resolve, s * 1000));
+myGameList = []
+
 class Model{
     constructor(){
+        this.buildStars();
+    }
+
+    async buildStars() {
         let canvas = document.getElementById("primarystage");
+
         this.player = new Player(0, (canvas.height / 2) - (parseInt(document.getElementById("player").height) / 2));
         this.planets = [];
         this.spacePressed = false;
-        let i = 0;
-        while (i < numPlanets){
+       
 
-            let newPlanet = new Planet(Math.random() * (parseInt(canvas.width) - 200) + 200, Math.random() * parseInt(canvas.height), Math.random() * 100 + 20);
-            let j = 0;
-            let overlap = false;
-            console.log(this.planets.length);
-            while (j < this.planets.length && !overlap){
-                if (this.planets[j].radius + newPlanet.radius > this.distance(newPlanet.x,newPlanet.y,this.planets[j].x,this.planets[j].y)){
-                    //planets collide so respawn
-                    overlap = true;
+        var request = new XMLHttpRequest()
+
+        request.open('GET', 'http://localhost:3000/all/get1of5', true)
+        request.onload = function() {
+            // Begin accessing JSON data here
+            myGameList = JSON.parse(this.response)
+        }
+        request.send()
+
+        await sleep(2);
+
+        console.log(myGameList);
+
+        let gameListLength = myGameList.length;
+
+        for(const item in myGameList) {
+            let currentGame = myGameList[item];
+            let i = 0;
+            while (i < 1){
+
+                let newPlanet;
+                if(item == gameListLength-1) {
+                    newPlanet = new Planet(Math.random() * (parseInt(canvas.width) - 200) + 200, Math.random() * parseInt(canvas.height), hoursToSize(currentGame[2]), true);
+                } else {
+                    newPlanet = new Planet(Math.random() * (parseInt(canvas.width) - 200) + 200, Math.random() * parseInt(canvas.height), hoursToSize(currentGame[2]), false);
                 }
-                j++;
-            }
-            if (!overlap){
-                this.planets.push(newPlanet);
-                i++;
+                console.log(this.planets.length);
+                let j = 0;
+                let overlap = false;
+                while (j < this.planets.length && !overlap){
+                    if (this.planets[j].radius + newPlanet.radius > this.distance(newPlanet.x,newPlanet.y,this.planets[j].x,this.planets[j].y)){
+                        //planets collide so respawn
+                        overlap = true;
+                    }
+                    j++;
+                }
+                if (!overlap){
+                    this.planets.push(newPlanet);
+                    i++;
+                }
             }
         }
+
+
     }
 
     setSpacePressed(status){
@@ -90,3 +125,37 @@ class Model{
         return Math.sqrt(Math.pow(x1 - x2, 2) + Math.pow(y2 - y1, 2));
     }
 }
+
+
+
+/*
+ * convert the hours of game time to respective planet size.
+ */
+function hoursToSize(hours) {
+
+    if(hours >= 2000000) {
+        return 110;
+    } else if (hours >= 1000000) {
+        return 65;
+    } else {
+        return 25;
+    }
+}
+
+
+
+
+// checks status for API request
+function checkStatus(response){
+        if (response.status >= 200 && response.status < 300){
+            return response.text();
+        }else if (response.status == 410){
+            document.getElementById("errors").innerHTML = "";
+            let errorMessage = document.createElement("h3");
+            errorMessage.innerHTML = "No state data for: " + document.getElementById("box").value;
+            document.getElementById("errors").appendChild(errorMessage);
+            return Promise.reject(new Error(response.status + ":" + response.statusText));
+        }else{
+            return Promise.reject(new Error(response.status + ":" + response.statusText));
+        }
+    }
