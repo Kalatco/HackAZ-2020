@@ -2,9 +2,9 @@
 
 ## Authors
 
-[Gavin Magee](https://github.com/GavinTMagee) 
-[Reza Asayesh](https://github.com/RMA-source) 
-[Andrew Raftovich](https://github.com/Kalatco) 
+[Gavin Magee](https://github.com/GavinTMagee), 
+[Reza Asayesh](https://github.com/RMA-source), 
+[Andrew Raftovich](https://github.com/Kalatco), 
 [Robbie Bagley](https://github.com/kansairob) 
 
 ## Team (except tall man in center)
