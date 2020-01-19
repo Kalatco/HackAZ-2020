@@ -23,12 +23,23 @@ let numPlanets = 10;
         for (let i = 0; i < model.planets.length; i++){
             ctx.beginPath();
             ctx.arc(model.planets[i].x, model.planets[i].y, model.planets[i].radius, 0, 2 * Math.PI);
-            if (model.planets[i].goal){
+            if (model.planets[i].goal ){
                 ctx.fillStyle = "green";
             }else{
-                ctx.fillStyle = "red";
+                if(model.planets[i].small){
+                    ctx.fillStyle = "orange";
+                } else if(model.planets[i].medium){
+                    ctx.fillStyle = "red";
+                } else if(model.planets[i].large){
+                    ctx.fillStyle = "purple";
+                }
             }
             ctx.fill();
+
+            ctx.fillStyle = "white";
+            ctx.font = "15px Arial";
+            ctx.fillText(model.planets[i].title, model.planets[i].x-35, model.planets[i].y);
+            ctx.fillText(model.planets[i].hours, model.planets[i].x-25, model.planets[i].y+20);
         }
     }
 
