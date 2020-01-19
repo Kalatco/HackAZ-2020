@@ -1,4 +1,4 @@
-let numPlanets = 40;
+let numPlanets = 10;
 (function(){
     let model;
 
@@ -16,8 +16,13 @@ let numPlanets = 40;
         }
     }
 
+    function gameTick(){
+        model.updatePlayer();
+        drawAll();
+    }
+
     window.onload = function(){
         model = new Model();
-        drawAll();
+        setInterval(gameTick, 10);
     }
 })();

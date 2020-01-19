@@ -28,8 +28,7 @@ class Model{
         for (let i = 0; i < this.planets.length; i++){
             let planet = this.planets[i];
             let a = planet.radius / (Math.pow(this.player.x - planet.x, 2) + Math.pow(this.player.y - planet.y, 2));
-            a = a / 50;
-            let theta = getTheta(this.player, planet.x, document.getElementById("primarystage").height - planet.y);
+            let theta = this.getTheta(this.player, planet.x, document.getElementById("primarystage").height - planet.y);
 
             let va = -1 * a * Math.sin(theta);
             let ha = a * Math.cos(theta);
@@ -41,17 +40,17 @@ class Model{
     }
 
     getTheta(player, normalizedOtherX, normalizedOtherY){
-        normalizedPlayerX = player.x + player.width / 2;
-		normalizedPlayerY = document.getElementById("primarystage").height - player.y - (player.height / 2);
-		dx = normalizedOtherX - normalizedPlayerX;
-		dy = normalizedOtherY - normalizedPlayerY;
+        let normalizedPlayerX = player.x + player.width / 2;
+		let normalizedPlayerY = document.getElementById("primarystage").height - player.y - (player.height / 2);
+		let dx = normalizedOtherX - normalizedPlayerX;
+		let dy = normalizedOtherY - normalizedPlayerY;
 		if (dy == 0) {
 			dy += .01;
 		}
 		if (dx == 0) {
 			dx += .01;
 		}
-		theta = Math.atan(dy / dx);
+		let theta = Math.atan(dy / dx);
 		if (dy < 0 && dx < 0) {
 			theta += Math.PI;
 		} else if (dy > 0 && dx < 0) {
