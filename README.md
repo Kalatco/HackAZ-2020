@@ -14,6 +14,13 @@ The API itself can return random data from that CSV file to give random game tit
 
 The webscraper uses libraries Requests, Beautiful soup, and pandas to run this script. Starts by using requests library to get permission from steam website to get HTML code. Then uses BeautifulSoup library to parse the HTML from the website. Finally pandas library organizes the data into specific columns and rows.
 
+## Usage
+
+1. After the user has downloaded the files from github, open terminal or CMD and open the file directory with the indicated files.
+2. Download any dependent file for the program listed below.
+3. To start the server, you need to type 'node server.js' into the terminal or CMD.  This will start the server on port 3000.
+4. To open the site, go into your prefered browser and go to the address '[http://localhost:3000/](http://localhost:3000/)'.
+
 ## Authors
 
 [Gavin Magee](https://github.com/GavinTMagee), 
@@ -29,3 +36,9 @@ The webscraper uses libraries Requests, Beautiful soup, and pandas to run this s
 ## Dependencies
 
 Node.js, Express.js
+
+## Future implementations (TODO)
+
+[igdb api](https://www.igdb.com/discover) to replace planet colors with an image of the game.
+
+
