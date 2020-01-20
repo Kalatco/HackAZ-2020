@@ -110,12 +110,11 @@ app.get('/all/get1of5', function (req, res) {
     }
 
     res.send(foundGames);
-
 });
 
 function parseCSV() {
     var collection = [];// will contain the total collection of output data
-    var input = fs.readFileSync('first300Games.csv');
+    var input = fs.readFileSync('gameData/first300Games.csv');
     var data = input + '';
     var rows = data.split('\n').slice(1);
 

@@ -147,18 +147,3 @@ function hoursToSize(hours) {
         return 25;
     }
 }
-
-// checks status for API request
-function checkStatus(response) {
-    if (response.status >= 200 && response.status < 300) {
-        return response.text();
-    } else if (response.status == 410) {
-        document.getElementById("errors").innerHTML = "";
-        let errorMessage = document.createElement("h3");
-        errorMessage.innerHTML = "No state data for: " + document.getElementById("box").value;
-        document.getElementById("errors").appendChild(errorMessage);
-        return Promise.reject(new Error(response.status + ":" + response.statusText));
-    } else {
-        return Promise.reject(new Error(response.status + ":" + response.statusText));
-    }
-}
