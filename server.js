@@ -16,12 +16,12 @@ app.get('/', function(req, res) {
 })
 
 
-app.get('/all', function (req, res) {
+app.get('/api', function (req, res) {
     res.header("Access-Control-Allow-Origin", "*");
     res.send(parseCSV());
 });
 
-app.get('/all/get1of5', function (req, res) {
+app.get('/api/random', function (req, res) {
     res.header("Access-Control-Allow-Origin", "*");
     var collection = parseCSV();                // collection of games
 

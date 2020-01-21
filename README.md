@@ -6,6 +6,8 @@ January 2020
 
 This is a simulation for orbital gravitational pulls and data visualization helping to increase interest in whatever statistic is presented, along with increasing interest in the sciences.  The physics engine, graphics, and servers are all made by hand using node and html canvas by our team in our goal of increasing interest in science and statistics through the use of interactive games.  
 
+![video game](https://github.com/Kalatco/HackAZ-2020/blob/master/gamePlay.png)
+
 ## Our API
 
 The product connects to our backend server we designed using data found from  SteamCommunity.com where we gathered the playtime of the most popular games and stored them in a CSV file.
@@ -39,6 +41,11 @@ Node.js, Express.js
 
 ## Future implementations (TODO)
 
-[igdb api](https://www.igdb.com/discover) to replace planet colors with an image of the game.
-
-
+- [ ] Add [igdb api](https://www.igdb.com/discover) to replace planet colors with an image of the game.
+- [ ] Find name for the game.
+- [x] Make the game full screen.
+- [x] Fix hours displayed to a readable format.
+- [ ] Add home page to display instructions for the game.
+- [ ] Improve win screen by showing more info about the target game.
+- [ ] Fix sizes of planets to better represent number of hours played.
+- [ ] Improce delay with new spawn.
