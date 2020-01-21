@@ -40,6 +40,7 @@ The webscraper uses libraries Requests, Beautiful soup, and pandas to run this s
 Node.js, Express.js
 
 ## Future implementations (TODO)
+msg: Before making fixes to the master repo, branch off and make a merge request, give each merge a unique name indicating the fix message.
 
 - [ ] Add [igdb api](https://www.igdb.com/discover) to replace planet colors with an image of the game.
 - [ ] Find name for the game.
