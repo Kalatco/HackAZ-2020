@@ -40,8 +40,9 @@ let numPlanets = 10;
 
             ctx.fillStyle = "white";
             ctx.font = "15px Arial";
-            ctx.fillText(model.planets[i].title, model.planets[i].x-35, model.planets[i].y);
-            ctx.fillText(model.planets[i].hours, model.planets[i].x-25, model.planets[i].y+20);
+            ctx.textAlign = "center";
+            ctx.fillText(model.planets[i].title, model.planets[i].x, model.planets[i].y);
+            ctx.fillText(model.planets[i].hours, model.planets[i].x, model.planets[i].y + 35);
         }
     }
 

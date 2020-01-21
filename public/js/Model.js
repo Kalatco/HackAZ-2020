@@ -73,7 +73,8 @@ class Model {
     updatePlayer() {
         for (let i = 0; i < this.planets.length; i++) {
             let planet = this.planets[i];
-            let a = planet.radius / (Math.pow(this.player.x - planet.x, 2) + Math.pow(this.player.y - planet.y, 2));
+            let a = Math.pow(planet.radius, 3) / (Math.pow(this.player.x - planet.x, 2) + Math.pow(this.player.y - planet.y, 2));
+            a = a / 5000;
             let theta = this.getTheta(this.player, planet.x, document.getElementById("primarystage").height - planet.y);
 
             let va = -1 * a * Math.sin(theta);
