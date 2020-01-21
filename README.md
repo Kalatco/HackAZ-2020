@@ -49,4 +49,7 @@ msg: Before making fixes to the master repo, branch off and make a merge request
 - [ ] Add home page to display instructions for the game.
 - [ ] Improve win screen by showing more info about the target game.
 - [ ] Fix sizes of planets to better represent number of hours played.
-- [ ] Improce delay with new spawn.
+- [ ] Improve delay with new spawn.
+- [ ] Improve payer spawn by showing a bigger space ship.
+- [ ] Allow to let player choose experimential worlds to practive with orbital mechanics.
+- [ ] Check api/random to see if all 5 options are working correctly.
