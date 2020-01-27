@@ -15,8 +15,7 @@
   "bugs": {
   "url": "https://github.com/Kalatco/HackAZ-2020"
 },
-  "homepage": "https://github.com/Kalatco/HackAZ-2020"
-},
+  "homepage": "https://github.com/Kalatco/HackAZ-2020",
   "dependencies": {
   "express": "^4.17.0"
 }
