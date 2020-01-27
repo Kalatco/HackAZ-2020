@@ -16,15 +16,9 @@ This is a simulation for orbital gravitational pulls and data visualization help
 
 In this situation, the game data being displayed is Steam data for top most played games including their total played hours. To win, the user must fly their space ship to the green colored planet.
 
-<p>
-	<kbd>A</kbd> - turn left
-</p>
-<p>
-	<kbd>D</kbd> - turn right
-</p>
-<p>
-	<kbd>Spacebar</kbd> - boost
-</p>
+<kbd>A</kbd> - turn left 
+<kbd>D</kbd> - turn right 
+<kbd>Spacebar</kbd> - boost 
 
 ![video game](https://github.com/Kalatco/HackAZ-2020/blob/master/gamePlay.png)
 
