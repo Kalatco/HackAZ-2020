@@ -1,0 +1,19 @@
+{
+  "name": "HackAZ-2020",
+  "version": "1.0.0",
+  "description": "space game ",
+  "main": "server.js",
+  "scripts": {
+  "start": "node server.js"
+},
+  "repository": {
+  "type": "git",
+  "url": "https://github.com/Kalatco/HackAZ-2020"
+},
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+  "url": ""
+},
+  "homepage": ""
+}
