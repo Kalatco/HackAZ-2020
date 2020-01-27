@@ -14,8 +14,12 @@ class Model {
         this.spacePressed = false;
 
         var request = new XMLHttpRequest()
-
-        request.open('GET', 'http://localhost:3000/api/random', true)
+	
+	try {
+        	request.open('GET', 'http://localhost:3000/api/random', true)
+	} catch {
+		request.open('GET', 'https://hackaz2020-space-game.herokuapp.com/api/random',true)
+	}
         request.onload = function () {
             // Begin accessing JSON data here
             myGameList = JSON.parse(this.response)
