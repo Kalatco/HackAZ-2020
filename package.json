@@ -10,13 +10,13 @@
   "type": "git",
   "url": "https://github.com/Kalatco/HackAZ-2020"
 },
-  "author": "",
+  "author": "HackAZSquad",
   "license": "ISC",
   "bugs": {
-  "url": ""
+  "url": "https://github.com/Kalatco/HackAZ-2020"
 },
-  "homepage": ""
+  "homepage": "https://github.com/Kalatco/HackAZ-2020"
 },
-"dependencies" : {
+  "dependencies": {
   "express": "^4.17.0"
 }
